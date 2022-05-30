@@ -18,7 +18,7 @@ function App() {
         type="button"
       > Hello </Button>
       <Button><div>Hello</div></Button>
-      <Button>hello<hr/> De Lu</Button>
+      <Button bgColor="tomato" color="blue">hello<hr/> De Lu</Button>
       <Button> With child</Button>
 
     </div>

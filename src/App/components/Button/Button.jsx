@@ -5,19 +5,26 @@ import style from './Button.module.css';
 
 function  Button(props) {
     console.log(props);
-    return <button className={style.Button} 
-        type={props.type}
-    >{props.children}</button>
+    return <button 
+        className={style.Button} type={props.type}
+        style={{backgroundColor: props.bgColor, color: props.color}}
+    >
+        {props.children}
+    </button>
 }
 
 Button.propTypes = {
     type: PropTypes.string.isRequired,
     action: PropTypes.func,
-    children: PropTypes.any.isRequired
+    children: PropTypes.any.isRequired,
+    bgColor: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
 
 };
 
 Button.defaultProps= {
-    type: 'button'
+    type: 'button',
+    bgColor:'lime',
+    color:'white',
 };
 export default Button;
