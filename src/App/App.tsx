@@ -1,5 +1,6 @@
 import React from 'react';
 //import logo from './logo.svg';
+import Button from './components/Button/Button';
 import './App.css';
 
 function App() {
@@ -9,6 +10,12 @@ function App() {
     <div className="App">
       {/* Comment dans XML */}
       DEMAT BREIZH
+      <hr/>
+      <Button/>
+      <Button/>
+      <Button/>
+      <Button/>
+
     </div>
   );
 }
