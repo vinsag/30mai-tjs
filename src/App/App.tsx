@@ -1,30 +1,17 @@
 import React from 'react';
-//import logo from './logo.svg';
-import Button, {DefaultButton,WarningButton} from './components/Button/Button';
-import ButtonStyle from './components/Button/Button.module.css';
-import './App.css';
+import Button from './components/Button/Button';
 
-function App() {
-  // Comment js
-  /* Comment mutltignes js */
-  return (
-    <div className="App">
-      {/* Comment dans XML */}
-      DEMAT BREIZH
-      <hr/>
-      <Button
-        action={() => {
-          alert("Le bouton est clické");
-        }}
-        type="button"
-      > Hello </Button>
-      <Button style={{fontWeight:800, fontSize:'x-large' }}><div>Hello</div></Button>
-      <WarningButton bgColor="tomato" color="blue">hello<hr/> De Lu</WarningButton>
-      <DefaultButton bgColor="tomato" color="blue">hello<hr/> De Lu</DefaultButton>
-      <Button className={ButtonStyle.underline}> With child</Button>
-
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className='App' style={{textAlign:'center'}}>
+        Valeur du compteur : 1
+        <Button bgColor='tomato'>decrem -1</Button>
+        <Button bgColor='skyblue'>increm +1</Button>
+        
+      </div>
+    );
+  }
 }
 
 export default App;
