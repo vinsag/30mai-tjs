@@ -11,10 +11,15 @@ function App() {
       {/* Comment dans XML */}
       DEMAT BREIZH
       <hr/>
-      <Button/>
-      <Button/>
-      <Button/>
-      <Button/>
+      <Button
+        action={() => {
+          alert("Le bouton est clické");
+        }}
+        type="button"
+      > Hello </Button>
+      <Button><div>Hello</div></Button>
+      <Button>hello<hr/> De Lu</Button>
+      <Button />
 
     </div>
   );
