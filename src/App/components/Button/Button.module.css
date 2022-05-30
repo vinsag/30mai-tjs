@@ -9,3 +9,10 @@
     color: white;
 
 }
+.clicked {
+    box-shadow: 15px 15px 25px grey;
+    border: 1px outset grey;
+}
+.underline{
+    text-decoration:none;
+}

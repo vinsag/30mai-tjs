@@ -19,7 +19,8 @@ function App() {
         type="button"
       > Hello </Button>
       <Button style={{fontWeight:800, fontSize:'x-large' }}><div>Hello</div></Button>
-      <Button bgColor="tomato" color="blue">hello<hr/> De Lu</Button>
+      <WarningButton bgColor="tomato" color="blue">hello<hr/> De Lu</WarningButton>
+      <DefaultButton bgColor="tomato" color="blue">hello<hr/> De Lu</DefaultButton>
       <Button className={ButtonStyle.underline}> With child</Button>
 
     </div>
