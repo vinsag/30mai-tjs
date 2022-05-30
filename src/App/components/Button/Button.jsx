@@ -4,10 +4,10 @@ import style from './Button.module.css';
 
 
 function  Button(props) {
-    console.log(props);
     return <button 
-        className={style.Button} type={props.type}
-        style={{backgroundColor: props.bgColor, color: props.color}}
+        className={style.Button+(props.button.className?' '+props.className:'')} 
+        type={props.type}
+        style={{...props.style, backgroundColor: props.bgColor, color: props.color }}
     >
         {props.children}
     </button>
@@ -19,9 +19,22 @@ Button.propTypes = {
     children: PropTypes.any.isRequired,
     bgColor: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    style: PropTypes.object,
 
 };
 
+export function DefaultButton(props) {
+    return (
+        <Button {...props} bgColor='skyblue'></Button>
+    )
+}
+
+export function WarningButton(props) {
+    return (
+        <Button {...props} bgColor='tomato'></Button>
+    )
+}
 Button.defaultProps= {
     type: 'button',
     bgColor:'lime',

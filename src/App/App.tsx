@@ -1,6 +1,7 @@
 import React from 'react';
 //import logo from './logo.svg';
-import Button from './components/Button/Button';
+import Button, {DefaultButton,WarningButton} from './components/Button/Button';
+import ButtonStyle from './components/Button/Button.module.css';
 import './App.css';
 
 function App() {
@@ -17,9 +18,9 @@ function App() {
         }}
         type="button"
       > Hello </Button>
-      <Button><div>Hello</div></Button>
+      <Button style={{fontWeight:800, fontSize:'x-large' }}><div>Hello</div></Button>
       <Button bgColor="tomato" color="blue">hello<hr/> De Lu</Button>
-      <Button> With child</Button>
+      <Button className={ButtonStyle.underline}> With child</Button>
 
     </div>
   );
