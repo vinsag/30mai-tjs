@@ -1,43 +1,38 @@
+import { emptyMeme, ImageInterface, MemeInterface, MemeSVGViewer } from 'orsys-tjs-meme';
+import { DummyMeme, IImage, IMeme } from 'orsys-tjs-meme/dist/interfaces/common';
 import React from 'react';
-import Button from './components/Button/Button';
+import FlexLayout from './components/layout/FlexLayout/FlexLayout';
+import Footer from './components/ui/Footer/Footer';
+import Header from './components/ui/Header/Header';
+import MemeForm from './components/ui/MemeForm/MemeForm';
+import NavBar from './components/ui/NavBar/NavBar';
+
 interface IAppState {
-  message?: 'hello'|'goodbye',
-  counter: number
+  currentMeme:MemeInterface,
+  images:Array<ImageInterface>
 }
 interface IAppProps{}
 class App extends React.Component<IAppProps,IAppState> {
 
-  constructor(props:any) {
+  constructor(props:IAppProps) {
     super(props);
-    this.state={message:'hello', counter:0}
-  }
-  componentDidMount(){
-    console.log('Composant app monté');
-  }
-  componentDidUpdate(prevProps:IAppProps, prevState: IAppState){
-    console.log('state post update=>', prevState, this.state);
-    console.log('props pst update=>',prevProps,this.props);
-
+    this.state={currentMeme: emptyMeme, images: [] };
   }
   
   render() {
     return (
-      <div className='App' style={{textAlign:'center'}}>
-        Valeur du compteur : {this.state.counter}
-        <hr />
-        <Button action={()=>{
-          this.setState({counter:this.state.counter-1})
-          console.log(this.state.counter);
-        }} bgColor='tomato'>decrem -1</Button>
-        <Button action={()=>{
-          this.setState({counter:this.state.counter+1})
-          console.log(this.state.counter);
-        }} 
-        bgColor='skyblue'>increm +1</Button>
-        
+      <div className='App' data-testid="App">
+        <Header/>
+        <NavBar/>
+        <FlexLayout>
+          <MemeSVGViewer image={undefined} meme={this.state.currentMeme}/>
+          <MemeForm/>
+        </FlexLayout>
+        <Footer/>
       </div>
     );
-  }
+   
+}
 }
 
 export default App;

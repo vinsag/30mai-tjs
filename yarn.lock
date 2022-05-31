@@ -6252,10 +6252,10 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
-orsys-tjs-meme@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/orsys-tjs-meme/-/orsys-tjs-meme-1.0.0.tgz#ac685788bb5a0eb028ceca61f07dd32dd83360f8"
-  integrity sha512-IpFFzXNAduLi7Ex0nBe0IFBp/fVLGS7A6FRd/M3eSyB4Hikb4N3y7UKaWhSWALdxzvtWaoDWcWukwShAltzOZw==
+orsys-tjs-meme@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/orsys-tjs-meme/-/orsys-tjs-meme-1.0.2.tgz#3aac9944d3809b6dc4f158ac1fa0b008f4b471ac"
+  integrity sha512-aUomg5XXlHRn7Q5LusCvUzsABNaJgei4RCRXyYX7t/C//az5XdqzHs1BGhF30eiGJnnW0p6dwR3FjMwhyUpLfQ==
 
 p-limit@^1.1.0:
   version "1.3.0"
