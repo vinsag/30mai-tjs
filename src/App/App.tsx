@@ -11,6 +11,14 @@ class App extends React.Component<IAppProps,IAppState> {
     super(props);
     this.state={message:'hello', counter:0}
   }
+  componentDidMount(){
+    console.log('Composant app monté');
+  }
+  componentDidUpdate(prevProps:IAppProps, prevState: IAppState){
+    console.log('state post update=>', prevState, this.state);
+    console.log('props pst update=>',prevProps,this.props);
+
+  }
   
   render() {
     return (
