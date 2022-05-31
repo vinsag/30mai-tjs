@@ -1,5 +1,4 @@
 import { emptyMeme, ImageInterface, MemeInterface, MemeSVGViewer } from 'orsys-tjs-meme';
-import { DummyMeme, IImage, IMeme } from 'orsys-tjs-meme/dist/interfaces/common';
 import React from 'react';
 import FlexLayout from './components/layout/FlexLayout/FlexLayout';
 import Footer from './components/ui/Footer/Footer';
@@ -22,11 +21,11 @@ class App extends React.Component<IAppProps,IAppState> {
   render() {
     return (
       <div className='App' data-testid="App">
-        <Header/>
-        <NavBar/>
+        <Header />
+        <NavBar />
         <FlexLayout>
           <MemeSVGViewer image={undefined} meme={this.state.currentMeme}/>
-          <MemeForm/>
+          <MemeForm meme={this.state.currentMeme} />
         </FlexLayout>
         <Footer/>
       </div>
