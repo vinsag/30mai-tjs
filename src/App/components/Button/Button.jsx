@@ -14,6 +14,10 @@ function Button(props) {
       onClick={(evt) => {
         setisClicked(true);
         console.log("isClicked: " + isClicked);
+        if(props.action && typeof props.action==='function') {
+          props.action();
+        }
+        
       }}
       className={`${style.Button}${
         props.className ? " " + props.className : ""
