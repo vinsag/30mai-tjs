@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import style from "./Button.module.css";
 
-function Button(props) {
+interface IButtonProps{
+  type?: 'button'|'submit'|'reset',
+  action?: Function,
+  children: React.ReactElement|Array<React.ReactNode>|string,
+  bgColor?: string,
+  color?: string,
+  className?: string,
+  style?: object,
+};
+
+const Button:React.FC<IButtonProps>=(props)=> {
   const [isClicked, setisClicked] = useState(false);
   useEffect(() => {
     if (isClicked) {
@@ -35,8 +45,9 @@ function Button(props) {
   );
 }
 
+
 Button.propTypes = {
-  type: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['button','submit','reset']),
   action: PropTypes.func,
   children: PropTypes.any.isRequired,
   bgColor: PropTypes.string.isRequired,
@@ -45,16 +56,17 @@ Button.propTypes = {
   style: PropTypes.object,
 };
 
-export function DefaultButton(props) {
-  return <Button {...props} bgColor="skyblue"></Button>;
-}
-
-export function WarningButton(props) {
-  return <Button {...props} bgColor="tomato"></Button>;
-}
 Button.defaultProps = {
   type: "button",
   bgColor: "lime",
-  color: "white",
-};
+  color: "white"
+}
+export const DefaultButton:React.FC<IButtonProps>=(props)=> {
+  return <Button {...props} bgColor="skyblue"></Button>;
+}
+
+export const WarningButton:React.FC<IButtonProps>=(props)=> {
+  return <Button {...props} bgColor="tomato"></Button>;
+}
+
 export default Button;
