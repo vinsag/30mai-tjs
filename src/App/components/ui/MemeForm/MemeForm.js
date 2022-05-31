@@ -12,6 +12,10 @@ const MemeForm = (props) => {
             id="f_titre"
             placeholder="saisir titre"
             value={props.meme.titre}
+            onChange={(evt)=> {
+              console.log(evt.target.value);
+              props.onMemeChange({...props.meme, titre:evt.target.value});
+            }}
              />
           <hr />
           <h2>Image</h2>
@@ -26,6 +30,10 @@ const MemeForm = (props) => {
           <input
             type="text"
             value={props.meme.text}
+            onChange={(evt)=> {
+              console.log(evt.target.value);
+              props.onMemeChange({...props.meme, text:evt.target.value});
+            }}
 
           />
           <div className={styles.half}>
@@ -36,6 +44,10 @@ const MemeForm = (props) => {
                 type="number"
                 className={styles.smallInput}
                 value={props.meme.x}
+                onChange={(evt)=> {
+                  console.log(evt.target.value);
+                  props.onMemeChange({...props.meme, x:Number(evt.target.value)});
+                }}
 
               />
             </div>
@@ -46,6 +58,10 @@ const MemeForm = (props) => {
                 type="number"
                 className={styles.smallInput}
                 value={props.meme.y}
+                onChange={(evt)=> {
+                  console.log(evt.target.value);
+                  props.onMemeChange({...props.meme, y:parseInt(evt.target.value)});
+                }}
 
               />
             </div>
@@ -56,6 +72,10 @@ const MemeForm = (props) => {
             type="color"
             id="f_color"
             value={props.meme.color}
+            onChange={(evt)=> {
+              console.log(evt.target.value);
+              props.onMemeChange({...props.meme, color:evt.target.value});
+            }}
 
           />
           <div className={styles.half}>
@@ -67,6 +87,10 @@ const MemeForm = (props) => {
                 className={styles.smallInput}
                 min={0}
                 value={props.meme.fontSize}
+                onChange={(evt)=> {
+                  console.log(evt.target.value);
+                  props.onMemeChange({...props.meme, fontSize:Number(evt.target.value)});
+                }}
 
               />
             </div>
@@ -80,6 +104,10 @@ const MemeForm = (props) => {
                 step="100"
                 max="900"
                 value={props.meme.fontWeight}
+                onChange={(evt)=> {
+                  console.log(evt.target.value);
+                  props.onMemeChange({ ...props.meme, fontWeight:evt.target.value});
+                }}
 
               />
             </div>
@@ -92,6 +120,10 @@ const MemeForm = (props) => {
                 id="f_underline"
                 type="checkbox"
                 checked={props.meme.underline}
+                onChange={(evt)=> {
+                  console.log(evt.target.value);
+                  props.onMemeChange({...props.meme, underline:evt.target.checked});
+                }}
 
               />
             </div>
@@ -102,6 +134,10 @@ const MemeForm = (props) => {
                 id="f_italic"
                 type="checkbox"
                 checked={props.meme.italic}
+                onChange={(evt)=> {
+                  console.log(evt.target.value);
+                  props.onMemeChange({...props.meme, italic:evt.target.checked});
+                }}
 
               />
             </div>

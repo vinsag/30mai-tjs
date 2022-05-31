@@ -25,7 +25,12 @@ class App extends React.Component<IAppProps,IAppState> {
         <NavBar />
         <FlexLayout>
           <MemeSVGViewer image={undefined} meme={this.state.currentMeme}/>
-          <MemeForm meme={this.state.currentMeme} />
+          <MemeForm 
+            meme={this.state.currentMeme} 
+            onMemeChange={(meme:MemeInterface)=>{
+              this.setState({ currentMeme: meme});
+          }
+          } />
         </FlexLayout>
         <Footer/>
       </div>
