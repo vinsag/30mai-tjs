@@ -1,9 +1,10 @@
 import { emptyMeme, ImageInterface, MemeInterface, MemeSVGViewer } from 'orsys-tjs-meme';
+import ConnectedMemeSVG from './components/ui/ConnectedMemeSvg/ConnectedMemeSVG';
 import React from 'react';
 import FlexLayout from './components/layout/FlexLayout/FlexLayout';
 import Footer from './components/ui/Footer/Footer';
 import Header from './components/ui/Header/Header';
-import MemeForm from './components/ui/MemeForm/MemeForm';
+import {ConnectedMemeForm } from './components/ui/MemeForm/MemeForm';
 import NavBar from './components/ui/NavBar/NavBar';
 
 interface IAppState {
@@ -54,17 +55,10 @@ class App extends React.Component<IAppProps,IAppState> {
         <Header />
         <NavBar />
         <FlexLayout>
-          <MemeSVGViewer image={
-            this.state.images.find(e=>e.id===this.state.currentMeme.imageId)
-
-          } meme={this.state.currentMeme} basePath='/media/'/>
-          <MemeForm 
-            meme={this.state.currentMeme} 
+          <ConnectedMemeSVG image={undefined}/>
+          <ConnectedMemeForm
             images={this.state.images}
-            onMemeChange={(meme:MemeInterface)=>{
-              this.setState({ currentMeme: meme});
-          }
-          } />
+        />
         </FlexLayout>
         <Footer/>
       </div>

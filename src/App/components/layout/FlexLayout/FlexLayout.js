@@ -5,7 +5,7 @@ import style from './FlexLayout.module.css'
 
 const FlexLayout = (props) => {
     return (
-        <div className={style.FlexLayout} data-testid="FlexLayout">FlexLayout
+        <div className={style.FlexLayout} data-testid="FlexLayout">
         {props.children}
         </div>
     )
