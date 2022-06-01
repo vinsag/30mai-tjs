@@ -25,6 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cmp_ui": "npx generate-react-cli c --type=ui",
+    "json":"json-server -p 2500 db/db.json",
     "cmp_layout": "npx generate-react-cli c --type=layout"
   },
   "eslintConfig": {
@@ -44,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-server": "^0.17.0"
   }
 }

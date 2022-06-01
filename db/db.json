@@ -1,0 +1,41 @@
+{
+  "memes": [
+    {
+        "id":"0",
+        "titre":"phare",
+        "text":"Superbe vue",
+        "x":150,
+        "y":75,
+        "fontWeight":"500",
+        "fontSize":30,
+        "underline":false,
+        "italic":true,
+        "imageId":0,
+        "color":"#4b3fa6"
+    }
+  ],
+  "images": [
+    {
+      "id": 0,
+      "name": "cote",
+      "h": 270,
+      "w": 480,
+      "url": "cote.jpg"
+    },
+    { 
+        "id": 1, 
+        "name": "mer", 
+        "h": 500, 
+        "w": 310, 
+        "url": "mer.jpg" 
+    },
+
+    { 
+        "id": 2, 
+        "name": "nature", 
+        "h": 500, 
+        "w": 300, 
+        "url": "nature.jpg" 
+    }
+  ]
+}

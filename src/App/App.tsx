@@ -8,7 +8,8 @@ import NavBar from './components/ui/NavBar/NavBar';
 
 interface IAppState {
   currentMeme:MemeInterface,
-  images:Array<ImageInterface>
+  images:Array<ImageInterface>,
+  memes:Array<MemeInterface>
 }
 interface IAppProps{}
 
@@ -21,9 +22,32 @@ class App extends React.Component<IAppProps,IAppState> {
 
   constructor(props:IAppProps) {
     super(props);
-    this.state={currentMeme: emptyMeme, images: images };
+    this.state={currentMeme: emptyMeme, images: [], memes: [] };
   }
   
+  componentDidMount(){
+    const timgs = fetch('http://localhost:2500/images')
+      .then(f=>f.json())
+
+    const tmemes = fetch('http://localhost:2500/memes')
+      .then(f=>f.json())
+    
+    const tAll = Promise.all([timgs,tmemes]);
+
+    const tout=new Promise((resolve)=>
+      {
+        setTimeout(resolve,100)
+      });
+     
+    Promise.race([tAll,tout]).then(arr_arr=>{
+      if(!Array.isArray(arr_arr)) {
+        console.log("timeout declenché");
+        return;
+      }
+      console.log(arr_arr);
+      this.setState({memes:arr_arr[1], images:arr_arr[0]})
+    })
+  }
   render() {
     return (
       <div className='App' data-testid="App">
