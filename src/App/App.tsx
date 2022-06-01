@@ -14,8 +14,8 @@ interface IAppProps{}
 
 const images: Array<ImageInterface>=[
   {id:0,name:"cote",h:270,w:480,url:'cote.jpg'},
-  {id:1,name:"mer",h:1120,w:516,url:'mer.jpg'},
-  {id:2,name:"nature",h:800,w:500,url:'nature.jpg'},
+  {id:1,name:"mer",h:500,w:310,url:'mer.jpg'},
+  {id:2,name:"nature",h:500,w:300,url:'nature.jpg'},
 ];
 class App extends React.Component<IAppProps,IAppState> {
 

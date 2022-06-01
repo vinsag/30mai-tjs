@@ -18,7 +18,7 @@ const MemeForm = (props) => {
              />
           <hr />
           <h2>Image</h2>
-          <select value={props.meme.imageId} onChange={evt=>{
+          <select value={props.meme.imageId} onChange={(evt) =>{
             props.onMemeChange({...props.meme,imageId:Number(evt.target.value)})
           }}>
             <option value="-1">Aucune</option>
